@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="192"
+   height="192"
+   viewBox="0 0 50.799999 50.800001"
+   version="1.1"
+   id="svg12"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="favicon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview14"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="2.8957214"
+     inkscape:cx="101.70177"
+     inkscape:cy="130.36475"
+     inkscape:window-width="1920"
+     inkscape:window-height="1123"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs9">
+    <rect
+       x="4.5923362"
+       y="9.7613584"
+       width="171.25778"
+       height="155.84738"
+       id="rect3863" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient74">
+      <stop
+         style="stop-color:#667eea;stop-opacity:1"
+         offset="0"
+         id="stop70" />
+      <stop
+         style="stop-color:#8948c9;stop-opacity:1"
+         offset="1"
+         id="stop72" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient74"
+       id="linearGradient76"
+       x1="-2.5507488"
+       y1="-1.7606391"
+       x2="53.510445"
+       y2="52.853935"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:url(#linearGradient76);stroke:#5d9bfb;stroke-width:0.233363;fill-opacity:1"
+       id="rect38"
+       width="56.061192"
+       height="54.614574"
+       x="-2.5507488"
+       y="-1.7606391" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.4624614,0,0,0.4624614,-1.2982888,-9.9686389)"
+       id="text3861"
+       style="font-style:normal;font-weight:normal;font-size:122.052px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect3863);fill:#000000;fill-opacity:1;stroke:none"><tspan
+         x="4.5917969"
+         y="117.74913"
+         id="tspan31650"><tspan
+           style="font-weight:bold;-inkscape-font-specification:sans-serif;fill:#ffffff"
+           id="tspan31648">F</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:35.4931px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.212958"
+       x="24.338699"
+       y="41.029984"
+       id="text16561"><tspan
+         sodipodi:role="line"
+         id="tspan16559"
+         style="font-weight:bold;font-size:35.4931px;fill:#ffffff;fill-opacity:1;stroke-width:0.212958"
+         x="24.338699"
+         y="41.029984">p</tspan></text>
+  </g>
+</svg>
