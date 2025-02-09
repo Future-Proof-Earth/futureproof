@@ -6,12 +6,14 @@ import DecisionExplorer from './pages/DecisionExplorer'
 import Vision from './pages/Vision'
 import FutureProofingGovernance from './pages/FutureProofingGovernance'
 import Footer from './components/Footer'
+import ScrollToTop from './utils/ScrollToTop';
 import './styles/App.css'
 
 function App() {
   return (
     <Router>
       <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/narrative-shift" element={<NarrativeShift />} />

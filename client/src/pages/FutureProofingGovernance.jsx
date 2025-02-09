@@ -9,7 +9,7 @@ function FutureProofingGovernance() {
           <h3>Introduction</h3><br />
           <p>How can we as a population effectively address matters of public concern that impact society, the economy, and the environment on local and global scales? 
               How can we drive positive change in these areas?</p>
-          <p>While education may not solve many immediate problems, it can be argued that education is the most crucial factor for societal reform for the better, as it ultimately addresses issues like these at their source over the long term. 
+          <p>While education may not solve many immediate problems, it can be argued that education is the most crucial factor to lasting positive change in society, ultimately addressing issues like these at their source over the long term. 
               Education empowers an individual to make rational, logical and moral decisions, and on the whole progresses research and exploration into solutions. Fear of the unknown often fuels negative traits such as racism, sexism, and xenophobia. 
               Ignorance leads to harmful decisions, while education fosters holistic improvement. 
               If everyone was highly educated on all subjects, they would all be capable of making the right decisions.</p>
