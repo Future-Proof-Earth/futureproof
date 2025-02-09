@@ -577,6 +577,10 @@ input[type="range"]::-webkit-slider-thumb:hover {
     .ideology-container {
         max-width: 400px;
     }
+    .spectrum-button {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
 }
 
 /* Small Mobile Styles */
