@@ -445,7 +445,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
   
 .article-container hr {
-    width: 400px;
+    width: 70%;
     margin: auto;
     opacity: 0.5;
 }
@@ -573,6 +573,9 @@ input[type="range"]::-webkit-slider-thumb:hover {
     }
     .main-container {
         padding-top: 7rem !important;
+    }
+    .ideology-container {
+        max-width: 400px;
     }
 }
 
