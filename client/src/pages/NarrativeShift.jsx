@@ -1,39 +1,79 @@
 import { useState } from 'react'
-import { leftRightArticles, authLibArticles } from '../data/articles'
+import {
+  leftRightArticles,
+  authLibArticles,
+  economicHierarchicalArticles,
+  extremeLeftRightArticles
+} from '../data/articles'
+
+const ARTICLE_SETS = [
+  {
+    key: 'leftRight',
+    label: 'Left ⟷ Right',
+    data: leftRightArticles,
+    spectrumLabels: { left: 'Far Left', center: 'Neutral', right: 'Far Right' },
+    ideologyLabels: value => {
+      if (value === 0) return 'Neutral'
+      if (value <= -4) return 'Far Left'
+      if (value <= -2) return 'Left'
+      if (value >= 4) return 'Far Right'
+      if (value >= 2) return 'Right'
+      return value < 0 ? 'Center Left' : 'Center Right'
+    }
+  },
+  {
+    key: 'authLib',
+    label: 'Authoritarian ⟷ Libertarian',
+    data: authLibArticles,
+    spectrumLabels: { left: 'Authoritarian', center: 'Neutral', right: 'Libertarian' },
+    ideologyLabels: value => {
+      if (value === 0) return 'Neutral'
+      if (value <= -4) return 'Strongly Authoritarian'
+      if (value <= -2) return 'Moderately Authoritarian'
+      if (value >= 4) return 'Strongly Libertarian'
+      if (value >= 2) return 'Moderately Libertarian'
+      return value < 0 ? 'Slightly Authoritarian' : 'Slightly Libertarian'
+    }
+  },
+  {
+    key: 'economic',
+    label: 'Capitalistic ⟷ Socialistic',
+    data: economicHierarchicalArticles,
+    spectrumLabels: { left: 'Capitalistic', center: 'Neutral', right: 'Socialistic' },
+    ideologyLabels: value => {
+      if (value === 0) return 'Neutral'
+      if (value <= -4) return 'Extreme Capitalist'
+      if (value <= -2) return 'Capitalist'
+      if (value >= 4) return 'Extreme Socialist'
+      if (value >= 2) return 'Socialist'
+      return value < 0 ? 'Center Capitalist' : 'Center Socialist'
+    }
+  },
+  {
+    key: 'extreme',
+    label: 'Extreme Left ⟷ Extreme Right',
+    data: extremeLeftRightArticles,
+    spectrumLabels: { left: 'Extreme Left', center: 'Neutral', right: 'Extreme Right' },
+    ideologyLabels: value => {
+      if (value === 0) return 'Neutral'
+      if (value <= -4) return 'Far Extreme Left'
+      if (value <= -2) return 'Extreme Left'
+      if (value >= 4) return 'Far Extreme Right'
+      if (value >= 2) return 'Extreme Right'
+      return value < 0 ? 'Center Extreme Left' : 'Center Extreme Right'
+    }
+  }
+]
 
 function NarrativeShift() {
-  const [activeSpectrum, setActiveSpectrum] = useState('leftRight')
+  const [articleSetKey, setArticleSetKey] = useState('leftRight')
   const [sliderValue, setSliderValue] = useState(0)
 
-  const getCurrentText = () => {
-    const articles = activeSpectrum === 'leftRight' ? leftRightArticles : authLibArticles
-    return articles.versions[sliderValue.toString()] || articles.versions["0"]
-  }
-
-  const getIdeologyLabel = () => {
-    if (sliderValue === 0) return "Neutral"
-    
-    if (activeSpectrum === 'leftRight') {
-      if (sliderValue <= -4) return "Far Left"
-      if (sliderValue <= -2) return "Left"
-      if (sliderValue >= 4) return "Far Right"
-      if (sliderValue >= 2) return "Right"
-      return sliderValue < 0 ? "Center Left" : "Center Right"
-    } else {
-      if (sliderValue <= -4) return "Strongly Authoritarian"
-      if (sliderValue <= -2) return "Moderately Authoritarian"
-      if (sliderValue >= 4) return "Strongly Libertarian"
-      if (sliderValue >= 2) return "Moderately Libertarian"
-      return sliderValue < 0 ? "Slightly Authoritarian" : "Slightly Libertarian"
-    }
-  }
-
-  const getSpectrumLabels = () => {
-    if (activeSpectrum === 'leftRight') {
-      return { left: "Far Left", center: "Neutral", right: "Far Right" }
-    }
-    return { left: "Authoritarian", center: "Neutral", right: "Libertarian" }
-  }
+  const currentSet = ARTICLE_SETS.find(set => set.key === articleSetKey)
+  const articles = currentSet.data
+  const getCurrentText = () => articles.versions[sliderValue.toString()] || articles.versions['0']
+  const getIdeologyLabel = () => currentSet.ideologyLabels(sliderValue)
+  const getSpectrumLabels = () => currentSet.spectrumLabels
 
   return (
     <div className="main-container">
@@ -46,19 +86,19 @@ function NarrativeShift() {
       </div>
 
       <div className="ideology-container">
-        <div className="spectrum-toggle">
-          <button 
-            onClick={() => setActiveSpectrum('leftRight')}
-            className={`spectrum-button ${activeSpectrum === 'leftRight' ? 'active' : ''}`}
+        {/* Article Set Dropdown */}
+        <div style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+          <label htmlFor="article-set-select" style={{ fontWeight: 500, fontSize: '1.1rem', color: 'white' }}>Article Set:</label>
+          <select
+            id="article-set-select"
+            value={articleSetKey}
+            onChange={e => setArticleSetKey(e.target.value)}
+            className="spectrum-select"
           >
-            Left ⟷ Right
-          </button>
-          <button 
-            onClick={() => setActiveSpectrum('authLib')}
-            className={`spectrum-button ${activeSpectrum === 'authLib' ? 'active' : ''}`}
-          >
-            Authoritarian ⟷ Libertarian
-          </button>
+            {ARTICLE_SETS.map(set => (
+              <option key={set.key} value={set.key}>{set.label}</option>
+            ))}
+          </select>
         </div>
 
         <div className="slider-container">
@@ -67,19 +107,19 @@ function NarrativeShift() {
             <span>{getSpectrumLabels().center}</span>
             <span>{getSpectrumLabels().right}</span>
           </div>
-          <input 
+          <input
             type="range"
             min={-5}
             max={5}
             step={1}
             value={sliderValue}
-            onChange={(e) => setSliderValue(parseInt(e.target.value))}
+            onChange={e => setSliderValue(parseInt(e.target.value))}
           />
           <div className="position-label">
             Current Position: {getIdeologyLabel()} ({sliderValue})
           </div>
         </div>
-        
+
         <div className="article-container">
           <h2 className="article-title">{getCurrentText().title}</h2>
           <h3 className="article-subtitle">{getCurrentText().subtitle}</h3>

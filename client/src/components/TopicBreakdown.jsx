@@ -74,7 +74,7 @@ const SubtopicItem = ({ subtopic, expandedItems, toggleItem }) => (
   </div>
 )
 
-const TopicBreakdown = () => {
+const TopicBreakdown = ({ treeData = brexitData }) => {
   const [expandedItems, setExpandedItems] = useState(new Set())
   const [isExpanded, setIsExpanded] = useState(false)
 
@@ -94,12 +94,11 @@ const TopicBreakdown = () => {
         className="gradient-button"
         onClick={() => setIsExpanded(!isExpanded)}
       >
-        {brexitData.title}
+        {treeData.title}
       </button>
-      
       {isExpanded && (
         <div style={{ marginTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.2)', paddingTop: '1.5rem' }}>
-          {brexitData.subtopics.map((subtopic) => (
+          {treeData.subtopics.map((subtopic) => (
             <SubtopicItem 
               key={subtopic.id} 
               subtopic={subtopic} 
