@@ -12,15 +12,17 @@ function Home() {
       <div className="tagline">Removing ego from decision making</div>
 
       <ContentSection>
-        <p>We are involved in a battle with truth and data. In a world of bot-created content, targeted feeds,
+        <p>We are involved in a battle with truth, data and our attention. In a world of bot-created content, targeted feeds,
           crafted narratives and media echo-chambers, how can we, as a society, better evaluate information to
           make decisions that improve our collective wellbeing?</p>
         <p>Every decision carries the weight of our biases, beliefs, and ego. And the stories told to us carry the
           weight of someone else's. But what if we could strip all that away? What if we could see through the
           manipulation of data in every major decision?</p>
         <p>Futureproof is building tools to strip away bias and reveal the true complexity behind seemingly simple
-          choices. We expose how the stories we're presented with often diverge from the data underneath. This
-          shapes our understanding, and our understanding shapes our decisions.</p>
+          choices in an effort to improve how we live in society.
+          We expose how the stories we're presented with often diverge from the data underneath. This
+          shapes our understanding, and our understanding shapes our decisions.
+          By better navigating this complex field, we hone what we give our attention and can live more fulfilling lives.</p>
         <p style={{ textAlign: 'center' }}><strong>Understanding reality shouldn't be a privilege - it should be our shared foundation.</strong></p>
         <form action="https://formspree.io/f/mqaajbwj" method="POST" className="signup-form">
           <input type="email" name="email" placeholder="Enter your email" required className="email-input" />

@@ -19,12 +19,15 @@ function Vision() {
             Where progress is measured not just in economic growth, but in the elimination of preventable hardships and the creation of opportunities for all to contribute to society's advancement.</p>    
           
           <p>We want to create a society that maximises population well-being through:
+          <br />
+          <br />
             <ul>
               <li>Governance systems based on modern software development principles</li>
               <li>Equitable resource distribution based primarily on utilitarian mathematics</li>
               <li>Elimination of misinformation</li>
               <li>Enhanced critical thinking</li>
               <li>Higher engagement with the political process</li>
+              <li>Promotion of mindfulness, understanding and gratitude</li>
             </ul>   
           </p>
 
