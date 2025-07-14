@@ -37,9 +37,9 @@ const ARTICLE_SETS = [
   },
   {
     key: 'economic',
-    label: 'Capitalistic ⟷ Socialistic',
+    label: 'Economic Collectivist ⟷ Economic Individualist',
     data: economicHierarchicalArticles,
-    spectrumLabels: { left: 'Capitalistic', center: 'Neutral', right: 'Socialistic' },
+    spectrumLabels: { left: 'Collectivist', center: 'Neutral', right: 'Individualist' },
     ideologyLabels: value => {
       if (value === 0) return 'Neutral'
       if (value <= -4) return 'Extreme Capitalist'
