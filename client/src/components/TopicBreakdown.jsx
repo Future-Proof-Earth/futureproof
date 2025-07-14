@@ -76,7 +76,6 @@ const SubtopicItem = ({ subtopic, expandedItems, toggleItem }) => (
 
 const TopicBreakdown = ({ treeData = brexitData }) => {
   const [expandedItems, setExpandedItems] = useState(new Set())
-  const [isExpanded, setIsExpanded] = useState(false)
 
   const toggleItem = (id) => {
     const newExpanded = new Set(expandedItems)
@@ -90,24 +89,17 @@ const TopicBreakdown = ({ treeData = brexitData }) => {
 
   return (
     <div className="glassmorphic">
-      <button
-        className="gradient-button"
-        onClick={() => setIsExpanded(!isExpanded)}
-      >
-        {treeData.title}
-      </button>
-      {isExpanded && (
-        <div style={{ marginTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.2)', paddingTop: '1.5rem' }}>
-          {treeData.subtopics.map((subtopic) => (
-            <SubtopicItem 
-              key={subtopic.id} 
-              subtopic={subtopic} 
-              expandedItems={expandedItems}
-              toggleItem={toggleItem}
-            />
-          ))}
-        </div>
-      )}
+      <h2 style={{ textAlign: 'center', marginBottom: '2rem', fontWeight: 700, fontSize: '1.5rem' }}>{treeData.title}</h2>
+      <div style={{ borderTop: '1px solid rgba(255,255,255,0.2)', paddingTop: '1.5rem' }}>
+        {treeData.subtopics.map((subtopic) => (
+          <SubtopicItem 
+            key={subtopic.id} 
+            subtopic={subtopic} 
+            expandedItems={expandedItems}
+            toggleItem={toggleItem}
+          />
+        ))}
+      </div>
     </div>
   )
 }

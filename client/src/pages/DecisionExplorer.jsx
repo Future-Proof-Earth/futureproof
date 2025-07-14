@@ -3,7 +3,7 @@ import { brexitData } from '../data/brexitData.js'
 import { ukraineData } from '../data/ukraineData.js'
 import { wealthTaxData } from '../data/wealthTaxData.js'
 import { useState } from 'react'
-import ThoughtBubbleModal from '../components/ThoughtBubbleModal'
+// Removed: import ThoughtBubbleModal from '../components/ThoughtBubbleModal'
 
 const TREES = [
   { key: 'brexit', label: 'Should the UK leave the EU?', data: brexitData },
@@ -36,9 +36,12 @@ function DecisionExplorer() {
             </button>
           ))}
         </div>
-        <ThoughtBubbleModal open={!!openKey} onClose={() => setOpenKey(null)}>
-          {currentTree && <TopicBreakdown treeData={currentTree.data} />}
-        </ThoughtBubbleModal>
+        {/* Instead of modal, render below buttons */}
+        {currentTree && (
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
+            <TopicBreakdown treeData={currentTree.data} />
+          </div>
+        )}
       </div>
     </>
   )
